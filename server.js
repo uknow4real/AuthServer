@@ -34,7 +34,7 @@ app.delete('/logout', (req, res) => {
   res.sendStatus(204)
 })
 
-app.post('/login', (req, res) => {
+app.post('/login', async(req, res) => {
   const id = req.body.id;
   const pwd = req.body.pwd;
   await dynamodb.get({
