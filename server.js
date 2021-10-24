@@ -7,8 +7,8 @@ const jwt = require('jsonwebtoken')
 app.use(express.json())
 
 const login = {
-  id: "",
-  pwd: "",
+  id: "807d3ab75e78",
+  pwd: "uknow4real",
 };
 
 let refreshTokens = []
@@ -48,4 +48,4 @@ function generateAccessToken(sensor) {
   return jwt.sign(sensor, process.env.ACCESS_TOKEN, { expiresIn: '15s' })
 }
 
-app.listen(4000)
+app.listen(process.env.port || 3000)
