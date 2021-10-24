@@ -23,9 +23,7 @@ app.post('/login', async(req, res) => {
     if (id == response.Item.sensorid && pwd == response.Item.pwd) {
       const sensor = { id: id, pwd: pwd };
       const accessToken = generateAccessToken(sensor);
-      const refreshToken = jwt.sign(sensor, process.env.REFRESH_TOKEN);
-      refreshTokens.push(refreshToken);
-      res.json({ accessToken: accessToken, refreshToken: refreshToken });
+      res.json({ accessToken: accessToken });
     } else {
       res.json({ msg: 'Not valid credentials' });
     }
