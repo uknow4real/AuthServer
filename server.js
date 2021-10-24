@@ -43,7 +43,6 @@ app.post('/login', async(req, res) => {
       'sensorid': id
     }
   }).promise().then(response => {
-    res.json({ msg: response.Item.sensorid});
     if (id == response.Item.sensorid && pwd == response.Item.pwd) {
       const sensor = { id: id, pwd: pwd };
       const accessToken = generateAccessToken(sensor);
