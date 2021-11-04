@@ -25,7 +25,7 @@ app.post('/login', async(req, res) => {
       const accessToken = generateAccessToken(sensor);
       res.json({ accessToken: accessToken });
     } else {
-      res.json({ msg: 'Not valid credentials' });
+      res.json({ msg: 'Authentication failed.' });
     }
   }, error => {
     console.error('Oh no.', error);
