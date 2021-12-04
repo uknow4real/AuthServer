@@ -8,8 +8,24 @@ AWS.config.update({
 });
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 const dynamodbTableName = 'sensors';
+const cors = require('cors')
+
+app.use(
+  cors({
+    origin: '*',
+    methods: ['POST'],
+  })
+)
 
 app.use(express.json())
+
+app.get('/', (req, res) => {
+  
+})
+
+app.get('/login', (req, res) => {
+  
+})
 
 app.post('/login', async(req, res) => {
   const id = req.body.id;
