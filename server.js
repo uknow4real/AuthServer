@@ -17,15 +17,13 @@ app.use(
   })
 )
 
+app.use(function (req, res, next) {
+  if (req.method === 'POST' && req.url === '/login') {
+    return next();
+  }
+})
+
 app.use(express.json())
-
-app.get('/', (req, res) => {
-  
-})
-
-app.get('/login', (req, res) => {
-  
-})
 
 app.post('/login', async(req, res) => {
   const id = req.body.id;
