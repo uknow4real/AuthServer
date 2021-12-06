@@ -42,8 +42,7 @@ app.post('/login', async(req, res) => {
       res.json({ msg: 'Authentication failed.' });
     }
   }, error => {
-    console.error('Oh no.', error);
-    res.status(500).send(error);
+    res.status(500).send("Request Invalid.");
   })
 })
 
