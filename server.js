@@ -20,6 +20,8 @@ app.use(
 app.use(function (req, res, next) {
   if (req.method === 'POST' && req.url === '/login') {
     return next();
+  } else {
+    res.status(500).send("Request Invalid.");
   }
 })
 
